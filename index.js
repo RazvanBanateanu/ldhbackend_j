@@ -15,11 +15,9 @@ const pool = mysql.createPool(mysqlConfig);
 
 const app = express()
 
-app.use(cors({
-    origin: "http://localhost:3000",
-}))
+app.use(cors());
 
-const port = 5000;
+const port = 8000;
 
 app.get('/', function (req, res) {
   res.send('WELCOME')

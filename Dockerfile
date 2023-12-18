@@ -1,6 +1,6 @@
-FROM node:alpine
+FROM node:18-alpine
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 COPY package.json .
 
@@ -8,8 +8,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 8000
 
-VOLUME [ "/app/node_modules" ]
+CMD ["npm", "run", "start"]
 
-CMD [ "npm", "run", "start"]
